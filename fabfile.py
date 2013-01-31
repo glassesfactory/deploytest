@@ -4,7 +4,9 @@
 from fabric.api import local, run, env, cd, hosts
 
 CODE_DIR = "/var/www/sites/deploytest"
+
 env.user = "megane"# env.password = ''
+
 
 @hosts('localhost')
 def commit():
