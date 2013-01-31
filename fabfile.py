@@ -20,10 +20,7 @@ def pull():
     with cd(CODE_DIR):
         run("git pull origin master")
         #再読み込み
-        # now = run("gaffer ps")
-        try:
-            run("gaffer unload")
-        except Exception:
+        if run("gaffer unload").failed:
             pass
         run("gaffer load")
 
