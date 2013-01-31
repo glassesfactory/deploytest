@@ -3,7 +3,7 @@
 
 from fabric.api import local, run, env, cd, hosts
 
-CODE_DIR = "/var/www/sites/"
+CODE_DIR = "/var/www/sites/deploytest"
 env.host = ['192.168.1.24']
 env.user = "megane"
 # env.password = ''
@@ -20,9 +20,8 @@ def pull():
     with cd(CODE_DIR):
         run("git pull origin master")
         #再読み込み
-        with cd("blog"):
-            run("gaffer unload")
-            run("gaffer load")
+        run("gaffer unload")
+        run("gaffer load")
 
 
 def deploy():
