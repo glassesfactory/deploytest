@@ -11,7 +11,7 @@ class IndexController(ApplicationController):
     #Create your controller here.
 
     def index(self, *args, **kwargs):
-        return Response('Drink Shimehari!!')
+        return Response('Drink Shimehari!')
 
     def show(self, *args, **kwargs):
         return Response('write show action code...')
