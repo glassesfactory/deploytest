@@ -18,7 +18,7 @@ def commit():
 @hosts('192.168.1.24')
 def pull():
     with cd(CODE_DIR):
-        run("git pull origin master")
+        run("git pull github master")
         #再読み込み
         run("gaffer unload")
         run("gaffer load")
