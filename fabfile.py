@@ -20,6 +20,8 @@ def pull():
     with cd(CODE_DIR):
         run("git pull origin master")
         #再読み込み
+        now = run("gaffer ps")
+        print now
         run("gaffer unload")
         run("gaffer load")
 
