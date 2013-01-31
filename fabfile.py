@@ -22,8 +22,7 @@ def pull():
         #再読み込み
         now = run("gaffer ps")
         print now
-        do = run("gaffer unload")
-        print do
+        print run("gaffer unload")
         run("gaffer load")
 
 
