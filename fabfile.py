@@ -4,7 +4,7 @@
 from fabric.api import local, run, env, cd, hosts
 
 CODE_DIR = "/var/www/sites/deploytest"
-env.host = ['192.168.1.24']
+# env.host = ['192.168.1.24']
 env.user = "megane"
 # env.password = ''
 
@@ -15,7 +15,7 @@ def commit():
     local("git push github master")
 
 
-# @hosts('49.212.197.36:10022')
+@hosts('192.168.1.24')
 def pull():
     with cd(CODE_DIR):
         run("git pull origin master")
