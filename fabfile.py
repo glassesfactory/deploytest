@@ -21,7 +21,6 @@ def pull():
         run("git pull origin master")
         #再読み込み
         # now = run("gaffer ps")
-        print now
         try:
             run("gaffer unload")
         except Exception:
