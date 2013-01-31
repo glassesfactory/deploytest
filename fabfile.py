@@ -20,9 +20,12 @@ def pull():
     with cd(CODE_DIR):
         run("git pull origin master")
         #再読み込み
-        now = run("gaffer ps")
+        # now = run("gaffer ps")
         print now
-        print run("gaffer unload")
+        try:
+            run("gaffer unload")
+        except Exception:
+            pass
         run("gaffer load")
 
 
