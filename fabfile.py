@@ -15,7 +15,7 @@ def commit():
     local("git push github master")
 
 
-@hosts('192.168.1.24')
+@hosts('192.168.1.24:22')
 def pull():
     with cd(CODE_DIR):
         run("git pull github master")
