@@ -21,7 +21,7 @@ def pull():
         run("git pull origin master")
         #再読み込み
         if run("gaffer unload").failed:
-            pass
+            print "!"
         run("gaffer load")
 
 
