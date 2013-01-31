@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from fabric.api import local, run, env, cd, hosts
+from fabric.context_managers import settings
 
 CODE_DIR = "/var/www/sites/deploytest"
 
