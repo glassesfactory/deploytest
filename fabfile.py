@@ -5,7 +5,8 @@ from fabric.api import local, run, env, cd, hosts
 
 CODE_DIR = "/var/www/sites/deploytest"
 
-env.user = "megane"# env.password = ''
+env.hosts = ['192.168.1.24:22']
+env.user = "megane"
 
 
 @hosts('localhost')
@@ -20,8 +21,9 @@ def pull():
     with cd(CODE_DIR):
         run("git pull origin master")
         #再読み込み
-        if run("gaffer unload").failed:
-            print "!"
+
+        with settings(warn_only=True):
+            run("gaffer unload")
         run("gaffer load")
 
 
