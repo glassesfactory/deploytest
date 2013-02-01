@@ -1,9 +1,9 @@
-bind = 'unix:/var/run/gunicorn/gunicorn.sock'
+bind = 'unix:/home/gunicorn/gunicorn.sock'
 
 preload_app = True
 backlog = 2048
 workers = 1
-pidfile = '/var/run/gunicorn/gunicorn.pid'
+pidfile = '/home/gunicorn/gunicorn.pid'
 
 logfile = '/var/log/gunicorn/gunicorn_dev.log'
 loglevel = 'debug'
